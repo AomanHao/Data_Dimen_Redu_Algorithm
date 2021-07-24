@@ -32,8 +32,8 @@ subplot(1,3,2);
 scatter3(X(1,:),X(2,:),X(3,:),12,[angle angle_lr],'+');
 
 %% RUN LLE ALGORITHM
-Y=lle(X,K,d);
-% Y=lle_lite(X,K,d);
+%Y=lle(X,K,d);
+Y=lle_lite(X,K,d);
 % SCATTERPLOT OF EMBEDDING
 figure;
 subplot(1,2,1);cla;

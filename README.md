@@ -1,5 +1,5 @@
 # Data_Dimen_Redu_Algorithm
-## 1、LLE
+## 1、LLE Algorithm
 
 locally linear embedding algorithm code write by matlab, just a little update download from http://www.cs.nyu.edu/~roweis/lle/code.html
 
@@ -19,3 +19,10 @@ https://github.com/ArrowLuo/LLE_Algorithm
 
 ## 4、LLE Compared PCA 
 
+in run.m
+
+
+
+## 5、LLE_lite
+
+Improve the situation where the eigenvalue is 0

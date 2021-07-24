@@ -35,7 +35,7 @@ Y=lle_lite(X,K,d);
 % SCATTERPLOT OF EMBEDDING
 figure;
 subplot(1,2,1);
-scatter(Y(2,:),Y(1,:),12,tt,'+');
+scatter(Y(2,:),Y(1,:),12,tt,'+');title('LLE')
 
 
 %% PCA dimensionality reduction
@@ -45,7 +45,7 @@ D = diag(D); % perform PCA on features matrix
 conf.V_pca = V(:, 1:d);
 Y = conf.V_pca' * X;
 subplot(1,2,2);
-scatter(Y(1,:),Y(2,:),12,tt,'+');
+scatter(Y(1,:),Y(2,:),12,tt,'+');title('PCA')
 
 
 
