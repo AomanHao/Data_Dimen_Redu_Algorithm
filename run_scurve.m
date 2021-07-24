@@ -31,11 +31,20 @@ X = [[cos(angle), -cos(angle_lr)]; height; [ sin(angle), 2-sin(angle_lr)]];
 subplot(1,3,2);
 scatter3(X(1,:),X(2,:),X(3,:),12,[angle angle_lr],'+');
 
-% RUN LLE ALGORITHM
+%% RUN LLE ALGORITHM
 Y=lle(X,K,d);
-
+% Y=lle_lite(X,K,d);
 % SCATTERPLOT OF EMBEDDING
-subplot(1,3,3); cla;
-scatter(Y(1,:),Y(2,:),12,[angle angle_lr],'+');
+figure;
+subplot(1,2,1);cla;
+scatter(Y(1,:),Y(2,:),12,[angle angle_lr],'+');title('LLE')
 
+%% PCA dimensionality reduction
+C = double(X * X');
+[V, D] = eig(C);
+D = diag(D); % perform PCA on features matrix 
+conf.V_pca = V(:, 1:d);
+Y = conf.V_pca' * X;
+subplot(1,2,2);
+scatter(Y(1,:),Y(2,:),12,[angle angle_lr],'+');title('PCA')
 
